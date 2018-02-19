@@ -78,3 +78,15 @@ Metrics/LineLength:
 
 Style/Documentation:
   Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/ColonMethodCall:
+  Enabled: false
+
+Style/MixinUsage:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false

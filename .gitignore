@@ -18,3 +18,12 @@
 !/tmp/.keep
 
 .byebug_history
+
+# Ignore Swagger JSON files.
+/public/docs/
+
+# Ignore local environmental variables
+.env
+
+# Ignore coverage folder
+coverage
