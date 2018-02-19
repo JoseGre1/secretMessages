@@ -5,6 +5,10 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require "rspec/rails"
 # Add additional requires below this line. Rails is not loaded until this point!
 require "database_cleaner"
+require "simplecov"
+SimpleCov.start :rails do
+  add_filter "app/controllers/concerns/swagger_docs"
+end
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
@@ -18,8 +22,8 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
-  # Including FactoryGirl Methods
-  config.include FactoryGirl::Syntax::Methods
+  # Including FactoryBot Methods
+  config.include FactoryBot::Syntax::Methods
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
