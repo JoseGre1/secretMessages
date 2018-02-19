@@ -10,6 +10,6 @@ namespace :secretMessages do
   desc "Run Rspec tests"
   task :tests do
     puts "----Rspec----"
-    sh "bundle exec rails test"
+    sh "bundle exec rspec"
   end
 end
