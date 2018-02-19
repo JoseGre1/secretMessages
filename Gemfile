@@ -2,19 +2,21 @@ source "https://rubygems.org"
 
 ruby "2.3.3"
 
-# Use Puma as the app server
+gem "draper"
+gem "geocoder", "1.4.1"
+gem "pg"
 gem "puma", "~> 3.7"
-# Bundle edge Rails instead: gem "rails", github: "rails/rails"
 gem "rails", "~> 5.1.5"
-# Use sqlite3 as the database for Active Record
-gem "sqlite3"
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
-  gem "geocoder"
+  gem "dotenv-rails"
+  gem "factory_bot_rails"
+  gem "faker"
   gem "rspec-rails", "~> 3.5"
   gem "rubocop"
+  gem "swagger-docs"
 end
 
 group :development do
@@ -25,7 +27,6 @@ end
 
 group :test do
   gem "database_cleaner"
-  gem "factory_girl_rails", "~> 4.0"
-  gem "faker"
   gem "shoulda-matchers", "~> 3.1"
+  gem "simplecov", require: false
 end
